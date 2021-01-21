@@ -8,7 +8,7 @@ var started = false;
 var level = 0;
 
 //------------------------------ Start game
-$(document).keypress(function() {
+$(".startbtn").click(function() {
     if (started == false) {
         $("#level-title").text("Level " + level);
         nextSequence();
@@ -70,7 +70,7 @@ function checkAnswer(currentLevel) {
         console.log("Wrong");
         var audio = new Audio("sounds/wrong.mp3");
         audio.play();
-        $("#level-title").text("Game Over, Press Any Key to Restart");
+        $("#level-title").text("Game Over, Press the Start Button to Restart");
         $("body").addClass("game-over");
         setTimeout(function() {
             $("body").removeClass("game-over"); 
